@@ -1,0 +1,6 @@
+LOGIN minsu
+FAIL minsu
+FAIL minsu
+FAIL minsu
+ERROR system
+LOGIN jina
