@@ -78,6 +78,27 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 y_prob = model.predict_proba(X_test)[:, 1]
 
+# ROC Curve / AUC
+from sklearn.metrics import roc_curve, roc_auc_score
+
+auc = roc_auc_score(y_test, y_prob)
+
+print("AUC:", auc)
+
+fpr, tpr, thresholds = roc_curve(y_test, y_prob)
+
+plt.figure()
+plt.plot(fpr, tpr, label=f"AUC = {auc:.2f}")
+plt.plot([0, 1], [0, 1], linestyle="--")
+
+plt.xlabel("False Positive Rate")
+plt.ylabel("True Positive Rate")
+plt.title("ROC Curve")
+plt.legend()
+
+plt.savefig("analysis/roc_curve.png")
+plt.close()
+
 from sklearn.metrics import accuracy_score
 
 accuracy = accuracy_score(y_test, y_pred)
