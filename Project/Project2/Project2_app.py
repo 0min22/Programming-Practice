@@ -41,7 +41,7 @@ time_on_page = st.number_input(
 
 product_type = st.selectbox(
     "상품 종류",
-    ["Books", "Clothing", "Electronics"]
+    ["Books", "Clothing", "Electronics", "Home", "Toys"]
 )
 
 user_gender = st.selectbox(
@@ -51,7 +51,7 @@ user_gender = st.selectbox(
 
 user_location = st.selectbox(
     "지역",
-    ["Urban", "Suburban", "Rural"]
+    ["Bangalore", "Chennai", "Delhi", "Kolkata", "Mumbai"]
 )
 
 # 예측 버튼
